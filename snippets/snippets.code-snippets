@@ -1,0 +1,27 @@
+{
+    "fsharp starter template":{
+        "prefix": "!cModalTest",
+        "body": [
+            "namespace SAFEWorkflow.UITests",
+            "$0",
+            "open OpenQA.Selenium",
+            "open canopy.classic",
+            "open Controls",
+            "$0",
+            "type documentsRow (elem: IWebElement, headers: string list) =",
+                "inherit entityRow(elem, headers)",
+            "$0",
+            "type DocumentsTab () = ",
+                "inherit SAFEIRTab(\"Documents\")",
+            "$0",
+                "// Controls",
+                "member __.AddDocumentButton = button @\"button[ng-click='addDocument()']\"",
+                "member __.ListOfFiles       = @\"//tr[@ng-repeat='d in entity.documents track by d.id ']/td/a\"",
+                "member __.Modal             = DocumentsModal()",
+            "$0",
+                "// Functions",
+                "member this.ReturnAssociatedFileNames() = elements this.ListOfFiles |> List.map read"
+        ],
+        "description": "Creates Template for a Modal Test in F#"
+    }
+}
