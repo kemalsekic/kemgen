@@ -1,27 +1,40 @@
 {
     "fsharp starter template":{
-        "prefix": "!cModalTest",
+        "prefix": "!qTabTest",
         "body": [
-            "namespace SAFEWorkflow.UITests",
-            "$0",
+            "namespace Workflow.UITests",
+            "",
             "open OpenQA.Selenium",
             "open canopy.classic",
             "open Controls",
-            "$0",
+            "",
             "type documentsRow (elem: IWebElement, headers: string list) =",
-                "inherit entityRow(elem, headers)",
-            "$0",
-            "type DocumentsTab () = ",
-                "inherit SAFEIRTab(\"Documents\")",
-            "$0",
-                "// Controls",
-                "member __.AddDocumentButton = button @\"button[ng-click='addDocument()']\"",
-                "member __.ListOfFiles       = @\"//tr[@ng-repeat='d in entity.documents track by d.id ']/td/a\"",
-                "member __.Modal             = DocumentsModal()",
-            "$0",
-                "// Functions",
-                "member this.ReturnAssociatedFileNames() = elements this.ListOfFiles |> List.map read"
+            "   inherit entityRow(elem, headers)",
+            "",
+            "type ${1:TabName} () = ",
+            "   inherit SAFETab(\"${2:TabName}\")",
+            "",
+            "   // Controls",
+            "   member __.${3:AddDocumentButton} = ${4:button} @\"${5:button[ng-click='addDocument()']}\"",
+            "   member __.${6:Modal}             = ${7:DocumentsModal()}",
+            "",
+            "   // Functions",
+            "   member this.ReturnAssociatedFileNames() = elements this.ListOfFiles |> List.map read"
         ],
         "description": "Creates Template for a Modal Test in F#"
+    },
+    "fsharp safeir template":{
+        "prefix": "!qSafeTest",
+        "body": [
+            "let ${1:toggleBetweenFeeds} = {",
+            "   ${2:overviewTest} with",
+            "       name = \"${3:Overview - Toggle between feeds}\"",
+            "       envRestriction = Some [| AWSQA; Local |]",
+            "       testRailId = Some ${4:113}",
+            "       testFunc = fun _ ->",
+            "           ${5:Nav.Overview.Click()}",
+            "}"
+        ],
+        "description": "Creates a SAFE Test template in F#"
     }
 }

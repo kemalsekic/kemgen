@@ -3,6 +3,10 @@
     "displayName": "kemGen",
     "description": "Simple FSharp snippet generator",
     "publisher": "QStack",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kemalsekic/kemgen"
+    },
     "icon": "QStackLogo.png",
     "version": "0.0.1",
     "engines": {
