@@ -23,7 +23,7 @@
         ],
         "description": "Creates Template for a Modal Test in F#"
     },
-    "fsharp safeir template":{
+    "fsharp safe template":{
         "prefix": "!qSafeTest",
         "body": [
             "let ${1:toggleBetweenFeeds} = {",
@@ -36,5 +36,40 @@
             "}"
         ],
         "description": "Creates a SAFE Test template in F#"
+    },
+    "fsharp create controls class":{
+        "prefix": "!qCreateControlsClass",
+        "body": [
+            "namespace QStack.UITests",
+            "",
+            "open System",
+            "open System.Collections.Generic",
+            "open System.Linq",
+            "open canopy.classic",
+            "open OpenQA.Selenium",
+            "open canopyextensions",
+            "",
+            "module Controls =",
+            "    type formInput (elem : IWebElement) =",
+            "        // Values",
+            "        member __.IsDisplayed = displayed elem",
+            "",
+            "        // Functions",
+            "        member __.Read () = read elem",
+            "        member __.Write value = elem << value",
+            "",
+            "        new (locator) = formInput (element locator)"
+        ],
+        "description": "Creates a Controls class with a formInput control method"
+    },
+    "fsharp create control":{
+        "prefix": "!qCreateControl",
+        "body": [
+            "type inputField (elem : IWebElement) =",
+            "    inherit formInput(elem)",
+            "",
+            "    new (locator) = inputField (element locator)"
+        ],
+        "description": "Creates a Controls class with a formInput control method"
     }
 }

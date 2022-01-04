@@ -2,16 +2,19 @@
 
 KemGen, aka qaGen, is an F# code snippet generator.  Excellent for testing with the Canopy test framework!
 
+>Note: Extension is not yet published.  
+
+>Tip: Just drop the folder into this directory to use it: C:\Users\username\.vscode\extensions
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+No longer will you have to type out entire tests from scratch.
 
-For example if there is an image subfolder under your extension project workspace:
+![feature X](Snag1.png)
 
-![feature X](QStackLogo.png)
 
- Brought to you by: 
-> QStack
+![feature X](Snag2.png)
+
+
 
 ## Requirements
 
@@ -38,4 +41,6 @@ Added first snippet.
 
 -----------------------------------------------------------------------------------------------------------
 
-**Enjoy!**
+ **QStack**
+
+![feature X](QStackLogo.png)
