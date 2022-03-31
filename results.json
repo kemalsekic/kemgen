@@ -1,0 +1,14 @@
+{
+    "TestResults":{
+        "Passed":{
+            "testId": "0",
+            "iterations": 5,
+            "detail": "Failed at finding button"
+        },
+        "Failed":{
+            "testId": "0",
+            "iterations": 3,
+            "detail": "Failed at finding button"
+        }
+    }
+}
