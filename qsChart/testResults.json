@@ -1,0 +1,111 @@
+{
+    "TestResults":{
+        "Passed":{
+            "testId": "0",
+            "iterations": 5,
+            "detail": "Failed at finding button"
+        },
+        "Failed":{
+            "testId": "1",
+            "iterations": 3,
+            "detail": "Failed at finding button"
+        }
+    },
+    "stats": {
+        "suites": 1,
+        "tests": 2,
+        "passes": 2,
+        "pending": 0,
+        "failures": 0,
+        "start": "2022-04-01T18:09:51.962Z",
+        "end": "2022-04-01T18:09:55.582Z",
+        "duration": 3620,
+        "testsRegistered": 2,
+        "passPercent": 100,
+        "pendingPercent": 0,
+        "other": 0,
+        "hasOther": false,
+        "skipped": 0,
+        "hasSkipped": false
+      },
+      "results": [
+        {
+          "uuid": "c3cf99b0-4d53-4ee0-b9fb-0a509e9e0ae3",
+          "title": "",
+          "fullFile": "cypress/integration/2-advanced-examples/aliasing.spec.js",
+          "file": "cypress/integration/2-advanced-examples/aliasing.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "e47ba7c1-3eb3-47b1-8348-b74f3b430764",
+              "title": "Aliasing",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": ".as() - alias a DOM element for later use",
+                  "fullTitle": "Aliasing .as() - alias a DOM element for later use",
+                  "timedOut": null,
+                  "duration": 822,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/as\n// Alias a DOM element for use later\n// We don't have to traverse to the element\n// later in our code, we reference it with @\ncy.get('.as-table').find('tbody>tr').first().find('td').first().find('button').as('firstBtn'); // when we reference the alias, we place an\n// @ in front of its name\ncy.get('@firstBtn').click();\ncy.get('@firstBtn').should('have.class', 'btn-success').and('contain', 'Changed');",
+                  "err": {},
+                  "uuid": "10568ed4-ca23-41f3-ae84-5d6b79094d57",
+                  "parentUUID": "e47ba7c1-3eb3-47b1-8348-b74f3b430764",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": ".as() - alias a route for later use",
+                  "fullTitle": "Aliasing .as() - alias a route for later use",
+                  "timedOut": null,
+                  "duration": 1219,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Alias the route to wait for its response\ncy.intercept('GET', '**/comments/*').as('getComment'); // we have code that gets a comment when\n// the button is clicked in scripts.js\ncy.get('.network-btn').click(); // https://on.cypress.io/wait\ncy.wait('@getComment').its('response.statusCode').should('eq', 200);",
+                  "err": {},
+                  "uuid": "8cb87b05-1a00-49a6-86a7-de37283c54a0",
+                  "parentUUID": "e47ba7c1-3eb3-47b1-8348-b74f3b430764",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "10568ed4-ca23-41f3-ae84-5d6b79094d57",
+                "8cb87b05-1a00-49a6-86a7-de37283c54a0"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2041,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": true,
+          "rootEmpty": true,
+          "_timeout": 2000
+        }
+      ]
+
+}
