@@ -10,15 +10,25 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style src="./css/lineChart.css"></style>
     <title>Test Paths</title>
   </head>
 
   <body>
     <div class="container">
-      <h1>QStack</h1>
-      <canvas id="testPathChart"></canvas>
+      <h1>QStack - Test Chart</h1>
+      <canvas id="lChart"></canvas>
+      <button type="button" class="btn btn-outline-secondary" id="genTestBtn">Generate Test</button>
     </div>
+
+    <!-- <div class="container">
+      <h1>QStack</h1>
+      <canvas id="barChart"></canvas>
+    </div>  -->
+
+    
   </body>
 
-  <script type="module" src="ksServer.js"></script>
+  <!-- <script type="module" src="ksServer.js"></script> -->
+  <script type="module" src="testsChart.js"></script>
 </html>
